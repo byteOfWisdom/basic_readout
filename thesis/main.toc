@@ -2,4 +2,6 @@
 \babel@toc {ngerman}{}\relax 
 \babel@toc {british}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\def \@chapapp {\appendixname }
+\contentsline {chapter}{\nonumberline Bibliography}{2}{chapter*.3}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
