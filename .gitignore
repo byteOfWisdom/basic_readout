@@ -2,6 +2,7 @@ private/
 main.pdf
 
 *.aux
+*.toc
 *.out
 *.log
 *.fls
