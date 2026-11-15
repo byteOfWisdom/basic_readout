@@ -6,6 +6,7 @@
   - [ ] ideally implement sweeping amplitude
 
 - [ ] FPGA setup
+  - [ ] get vivado running
   - [ ] get OS onto board
   - [ ] run basic examples
   - [ ] register static ip for network???
