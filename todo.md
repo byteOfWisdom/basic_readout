@@ -6,7 +6,9 @@
   [ ] ideally implement sweeping amplitude
 
 [ ] FPGA setup
-  [ ] 
+  [ ] get OS onto board
+  [ ] run basic examples
+  [ ] register static ip for network???
 
 [ ] literature
   [ ] creature bibliography list (with brief summaries and clickable links)

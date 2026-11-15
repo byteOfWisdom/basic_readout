@@ -1,0 +1,60 @@
+\include{template}
+ \usepackage[headsepline=true,markcase=upper]{scrlayer-scrpage}
+ \automark[chapter]{chapter}
+ %\ohead*{} % outer head on even & odd pages
+ \setkomafont{pagehead}{\small\rfseries}
+
+ \KOMAoptions{twoside=false}
+
+
+% to turn on draft note
+\usepackage{background}
+\backgroundsetup{contents=DRAFT, color=blue!30}
+
+
+
+\include{title_page.tex}
+\bibliography{ba_refs.bib}
+
+
+
+\begin{document}
+
+\maketitle
+\pagestyle{scrplain}
+\KOMAoptions{twoside=false}
+
+% \includepdf[pages=-]{private/eigenständigkeitserklärung.pdf}
+\pagenumbering{Roman}
+\include{acknowledgements.tex}
+\tableofcontents
+
+%\KOMAoptions{twoside=false}
+\pagestyle{scrheadings}
+
+% turn off draft for following pages
+
+
+
+\cleardoubleoddpage
+\pagenumbering{arabic}
+\input{chapter_list.tex}
+
+% this ends main part
+\appendix
+%\part*{Appendix} % this only works for scrbook
+%
+% %\include{thesis_appendix}
+
+\printbibliography[heading=bibintoc]
+
+% as backmatter, chapter/section numbers are turned off.
+\backmatter
+%\listoffigures
+%\listoftables
+% \printglossaries
+% \include{thesis_acknowledgements_file}
+\include{ai_statement.tex}
+
+
+\end{document}

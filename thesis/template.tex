@@ -1,0 +1,244 @@
+\documentclass[sfdefaults=false]{scrbook}
+
+%\documentclass{scrreprt} %necessary to use to get two-sided title page
+
+\KOMAoptions{fontsize=11pt, paper=a4, open=any} % Schriftgröße und Papierformat setzen.
+\KOMAoptions{DIV=16} % Parameter mit dem man den Seitenrand ändern kann.
+
+\KOMAoptions{toc=bibliography}
+
+% \includeonly{%
+%   thesis_intro,
+%   thesis_appendix,
+%   thesis_acknowledge
+% }
+
+
+
+
+
+% title page setup
+\newcommand{\thesistitle}{Readout electronics for the BASiC experiment}
+\newcommand*{\thesisauthor}{add author name}
+\newcommand*{\thesistown}{Bonn}
+%\renewcommand*{\InstituteName}{Helmholtz-Institut für Strahlen- und Kernphysik}
+
+\newcommand*{\thesisrefereeonetext}{1. Gutachter}
+\newcommand*{\thesisrefereeone}{Prof. Dr. GUTACHER EINS}
+\newcommand*{\thesisrefereetwotext}{2. Gutachter}
+\newcommand*{\thesisrefereetwo}{Dr. GUTACHTER ZWEI}
+
+\newcommand*{\thesissubmit}{November 2026}
+\newcommand*{\thesismonth}{November}
+\newcommand*{\thesisyear}{2026}
+\newcommand*{\thesisdedication}{hier könnte ihre werbung stehen}
+
+
+\usepackage[onehalfspacing]{setspace} % sets 1.5 spacing
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[british]{babel}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage[version=4]{mhchem}
+\usepackage{pdfpages}
+\usepackage{longtable}
+\usepackage{csquotes}
+
+\captionsetup[subfigure]{justification=raggedright,singlelinecheck=off}
+
+\sisetup{
+	separate-uncertainty = true,
+	multi-part-units=brackets,
+	number-unit-product = \text{ },
+	mode=math,
+	exponent-product = \cdot,
+	output-product = \cdot,
+	output-decimal-marker = {.}
+}
+
+\usepackage{ circuitikz }
+
+\usepackage[backend=biber, citestyle=numeric, bibstyle=numeric]{biblatex} % do not change this, the whole thing will break
+% \usepackage{bibtex}
+% \usepackage[backend=bibtex]{biblatex}
+
+% \usepackage[headsepline=true,markcase=upper]{scrlayer-scrpage}
+% \automark[chapter]{chapter}
+% \ohead*{521: $\gamma$-Spektroskopie} % outer head on even & odd pages
+% \setkomafont{pagehead}{\tiny\bfseries}
+
+
+\addtokomafont{chapterprefix}{\raggedleft}
+\addtokomafont{chapter}{\Large}
+\addtokomafont{section}{\large}
+\addtokomafont{subsection}{\large}
+\addtokomafont{subsubsection}{\large}
+
+
+\makeatletter
+\renewcommand\chapter{\thispagestyle{plain}%
+  \global\@topnum\z@
+  \@afterindentfalse
+  \secdef\@chapter\@schapter}
+\makeatother
+
+\DeclareSIUnit\angstrom{\protect \text  {Å}}
+\DeclareSIUnit\frame{\protect \text{frame}}
+\DeclareSIUnit\ms{\milli\s}
+\DeclareSIUnit\mW{\milli\watt}
+\DeclareSIUnit\nm{\nano\meter}
+\DeclareSIUnit\M{\text{M}}
+\DeclareSIUnit\rpm{\text{rpm}}
+
+
+\usepackage{graphicx}
+
+
+\DeclareSIUnit\bin{\text{Bin}}
+\DeclareSIUnit\count{\text{Anzahl}}
+\DeclareSIUnit\unity{}
+
+%\titlehead{\centering\includegraphics[width=0.6\textwidth]{fig name here}} %for a title picture
+\graphicspath{{figs/}}
+
+
+\setlength\parindent{0pt}
+
+% to check if labels are referenced
+%\usepackage{refcheck}
+
+
+% Glossary package
+% \usepackage[acronym,toc,nosuper]{glossaries}
+
+% \hypersetup{colorlinks=false,
+%   linkbordercolor=blue,citebordercolor=magenta,urlbordercolor=darkgreen
+% }
+
+% Make a glossary and a list of acronyms.
+% \makeglossaries
+% \input{thesis_glossary}
+
+
+
+% common macros
+\def\diff#1#2{\frac{\text{d}#1}{\text{d}#2}}
+\def\diffp#1#2{\frac{\partial#1}{\partial#2}}
+\def\imply{\Longrightarrow}
+\def\d#1{\text{d}#1\text{ }}
+%\def\equiv{\Longleftrightarrow} % synonym for \iff
+
+\def\OD{\text{OD}}
+
+
+\def\todo#1{
+	\textbf{\textcolor{blue}{[#1]}}
+}
+
+
+
+\def\fig#1{figure \ref{fig:#1}}
+\def\tab#1{table \ref{tab:#1}}
+\def\eq#1{equation \eqref{eq:#1}}
+
+\def\jaft#1#2#3{
+	\begin{table}[h]
+	    \centering
+	    \begin{tabular}{#1} \hline
+		\input{#2}\end{tabular}
+	    \caption{#3}
+	    \label{tab:#2}
+	\end{table}
+}
+
+\def\jaftl#1#2#3#4{
+	\begin{table}[h]
+	    \centering
+	    \begin{tabular}{#1} \hline
+		\input{#2}\end{tabular}
+	    \caption{#3}
+	    \label{tab:#4}
+	\end{table}
+}
+
+\def\jafmt#1#2#3#4{
+	\begin{table}[h]
+	    \centering
+	    \begin{tabular}{#1}
+		#2
+	    \end{tabular}
+	    \caption{#3}
+	    \label{tab:#4}
+	\end{table}
+}
+
+
+\def\jafp#1#2{
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{#1}
+		%\includegraphics[height=0.4\textheight]{#1}
+		\captionof{figure}{#2}
+		\label{fig:#1}
+	\end{center}
+}
+
+\def\jafps#1#2#3{
+	\begin{figure}[hbp]
+		\centering
+		\includegraphics[width=#3\textwidth]{#1}
+		%\includegraphics[height=0.4\textheight]{#1}
+		\captionof{figure}{#2}
+		\label{fig:#1}
+	\end{figure}
+}
+
+\def\jafpsw#1#2#3{
+	\begin{figure*}[h]
+		\centering
+		\includegraphics[width=#3\textwidth]{#1}
+		%\includegraphics[height=0.4\textheight]{#1}
+		\captionof{figure}{#2}
+		\label{fig:#1}
+	\end{figure*}
+}
+
+\def\jafpp#1#2#3#4{
+	\begin{figure}[htp]
+		\centering
+		\begin{subfigure}{0.45\textwidth}
+		    \caption{}
+			\label{fig:#1}
+
+			\includegraphics[width = \textwidth]{#1}
+			%\caption{}
+			%\label{fig:#1}
+		\end{subfigure}
+		\begin{subfigure}{0.45\textwidth}
+		    \caption{}
+			\label{fig:#3}
+
+			\includegraphics[width = \textwidth]{#3}
+			%\caption{}
+			%\label{fig:#3}
+		\end{subfigure}
+		\caption{a) #2 and b) #4}
+	\end{figure}
+}
+
+\def\jafpsh#1#2#3{
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=#3\textwidth]{#1}
+		%\includegraphics[height=0.4\textheight]{#1}
+		\captionof{figure}{#2}
+		\label{fig:#1}
+	\end{figure}
+}
+
+\def\ergo{\Rightarrow} %silly stuff

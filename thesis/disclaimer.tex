@@ -1,0 +1,45 @@
+\include{template}
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrplain}
+\KOMAoptions{twoside=false}
+
+
+\begin{document}
+\thispagestyle{empty}
+\vspace*{\fill}
+
+\begin{otherlanguage}{ngerman}
+    Ich versichere, dass ich diese Arbeit selbstständig
+    verfasst und keine anderen als die angegebenen Quellen und
+    Hilfsmittel benutzt sowie die Zitate kenntlich gemacht habe.
+
+    \vspace*{4ex minus 0.5ex}
+
+    \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth, angle = -0.5]{sig_de}
+	\end{figure}
+  %\end{otherlanguage}
+
+  %\begin{otherlanguage}{UKenglish}
+    I hereby declare that this thesis was formulated by
+    myself and that no sources or tools other than those cited were used.
+
+    \vspace*{4ex minus 0.5ex}
+
+
+    \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{sig_en}
+	\end{figure}
+
+  \vspace*{10ex minus 4ex}
+
+  \noindent
+  %\begin{otherlanguage}{ngerman}
+    \begin{tabular}{@{}ll}
+      \thesisrefereeonetext: & \thesisrefereeone\\
+      \thesisrefereetwotext: & \thesisrefereetwo
+    \end{tabular}
+\end{otherlanguage}
+\end{document}
