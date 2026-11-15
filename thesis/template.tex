@@ -28,9 +28,9 @@
 \newcommand*{\thesisrefereetwotext}{2. Gutachter}
 \newcommand*{\thesisrefereetwo}{Dr. GUTACHTER ZWEI}
 
-\newcommand*{\thesissubmit}{November 2026}
-\newcommand*{\thesismonth}{November}
-\newcommand*{\thesisyear}{2026}
+\newcommand*{\thesissubmit}{DATE HERE!!!!!!!!!}
+\newcommand*{\thesismonth}{MONTH HERE}
+\newcommand*{\thesisyear}{2027}
 \newcommand*{\thesisdedication}{hier könnte ihre werbung stehen}
 
 
@@ -98,6 +98,29 @@
 
 
 \usepackage{graphicx}
+
+% make new \includegraphics command that will check for missing figues and insert a placeholder fig if not found
+\let\StandardIncludeGraphics\includegraphics%
+\renewcommand{\includegraphics}[2][]{%
+\IfFileExists{#2.eps}{%
+  \StandardIncludeGraphics[#1]{#2}%
+}{%
+ \IfFileExists{#2.pdf}{%
+  \StandardIncludeGraphics[#1]{#2}%
+  }{ % No, no .pdf, try *.jpg 
+   \IfFileExists{#2.jpg}{%
+    \StandardIncludeGraphics[#1]{#2}%
+    }{
+      \IfFileExists{#2.png}{%
+      \StandardIncludeGraphics[#1]{#2}%
+      }{%
+		\StandardIncludeGraphics{placeholder.pdf}
+     }
+   }
+ }
+}% 
+%
+}% End of command
 
 
 \DeclareSIUnit\bin{\text{Bin}}
