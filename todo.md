@@ -11,7 +11,7 @@
   - [ ] get red pitaya
   - [ ] get OS onto board
   - [ ] run basic examples
-  - [ ] register static ip for network???
+  - [x] register static ip for network???
 
 - [ ] literature
   - [ ] creature bibliography list (with brief summaries and clickable links)
@@ -19,4 +19,3 @@
     - [ ] rutherford back scattering
     - [ ] surface barrier detectors
     - [ ] spectroscopy with histograms
-    - [ ] 
