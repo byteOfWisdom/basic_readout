@@ -1,21 +1,29 @@
 - [ ] benchmarking setup
-  - [ ] acquire functional oscilloscope
+  - [x] acquire functional oscilloscope
   - [ ] measure signal shape after pips detector
   - [ ] measure signal after amp
-  - [ ] setup signal generator
+  - [x] setup signal generator (one comes as an example for the board)
+  - [ ] configure integrated pulse generator with measured amps/times/etc
   - [ ] get signal shape replicated
   - [ ] ideally implement sweeping amplitude
 
 - [ ] FPGA setup
   - [ ] get vivado running!!
-  - [ ] get red pitaya
+  - [x] get red pitaya
   - [ ] get OS onto board
   - [ ] run basic examples
   - [x] register static ip for network???
 
 - [ ] literature
-  - [ ] creature bibliography list (with brief summaries and clickable links)
+  - [x] creature bibliography list (with brief summaries and clickable links)
   - [ ] find papers on background topics
-    - [ ] rutherford back scattering
-    - [ ] surface barrier detectors
+    - [ ] electronics:
+      - [ ] FPGA theory
+      - [ ] ADC theory
+      - [ ] charge sensitive amplifiers
+    - [ ] signal processing
+      - [ ] CIC / FIR filters
+    - [ ] physics
+      - [ ] rutherford back scattering?
+      - [ ] surface barrier detectors
     - [ ] spectroscopy with histograms
