@@ -1,6 +1,5 @@
 - [ ] benchmarking setup
   - [x] acquire functional oscilloscope
-  - [ ] measure signal shape after pips detector
   - [ ] measure signal after amp
   - [x] setup signal generator (one comes as an example for the board)
   - [ ] configure integrated pulse generator with measured amps/times/etc
@@ -8,10 +7,10 @@
   - [ ] ideally implement sweeping amplitude
 
 - [ ] FPGA setup
-  - [ ] get vivado running!!
+  - [x] get vivado running!!
   - [x] get red pitaya
   - [ ] get OS onto board
-  - [ ] run basic examples
+  - [x] run basic examples
   - [x] register static ip for network???
 
 - [ ] literature
